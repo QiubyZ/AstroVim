@@ -9,6 +9,11 @@ return {
           "javac $fileName &&",
           "java $fileNameWithoutExt"
         },
+        go = "go run",
+        kotlin = {
+            "kotlinc -include-runtime $fileName -d $fileNameWithoutExt.jar &&",
+            "java -jar $fileNameWithoutExt.jar",
+            },
         python = "python3 -u",
         typescript = "deno run",
         rust = {
