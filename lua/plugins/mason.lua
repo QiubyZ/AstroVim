@@ -16,6 +16,7 @@ return {
         "yamlls",
         "kotlin_language_server",
         "bashls",
+        "gradle_ls",
         
         -- add more arguments for adding more language servers
       },
