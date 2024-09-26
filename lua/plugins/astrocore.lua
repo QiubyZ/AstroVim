@@ -36,6 +36,7 @@ return {
       opt = { -- vim.opt.<key>
         mouse= "a",
         completeopt = "menu,menuone,noselect",
+        relativenumber = false,
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes

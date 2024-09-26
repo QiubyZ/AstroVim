@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+--if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --Bermasalah
 -- Customize Treesitter
 
@@ -6,9 +6,9 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = {"lua","vim","bash","c","html","kotlin","java","golang", "yaml","yml"},
+    ensure_installed = {"lua","vim","bash","c","html"},
     auto_install = true,
-    highlight = true,
+    --highlight = true,
     indent = {enable = true},
   },
 }
