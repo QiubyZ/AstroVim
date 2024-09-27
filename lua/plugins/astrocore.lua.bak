@@ -35,7 +35,7 @@ return {
       
       opt = { -- vim.opt.<key>
         mouse = "a",
-        clipboard = 'unnamedplus',
+        clipboard = clipboard+'unnamedplus',
         completeopt = "menu,menuone,noselect",
         relativenumber = false,
         number = true, -- sets vim.opt.number

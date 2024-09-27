@@ -32,3 +32,10 @@ git clone https://github.com/QiubyZ/AstroVim.git ~/.config/nvim
 ```shell
 nvim
 ```
+
+#### Installation Termux-Api for Copy text (yank text)
+
+```bash
+pkg install termux-api 
+
+```

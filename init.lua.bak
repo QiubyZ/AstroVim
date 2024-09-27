@@ -15,7 +15,17 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 -- Konfigurasi nvim-cmp
+local cmp = require('cmp')
 
+cmp.setup({
+  -- ... konfigurasi lainnya
+  mapping = cmp.mapping.preset.insert({
+    -- ...
+    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Menonaktifkan <Enter> untuk konfirmasi
+    ['<C-y>'] = cmp.config.disable, -- Menonaktifkan <C-y> untuk konfirmasi
+    ['<LeftMouse>'] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- Menambahkan pemetaan untuk klik kiri mouse
+  }),
+})
 
 require "lazy_setup"
 require "polish"
