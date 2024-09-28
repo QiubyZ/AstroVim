@@ -18,24 +18,25 @@ return { -- override nvim-cmp plugin
     -- ==========================================================
     opts.mapping = cmp.mapping.preset.insert({
         
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Menonaktifkan <Enter> untuk konfirmasi
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), --Aktifkan <Enter> untuk konfirmasi
         ['<C-y>'] = cmp.config.enable, -- Menonaktifkan <C-y> untuk konfirmasi
-        ['<LeftMouse>'] = cmp.mapping.confirm({ select = true }),
+--        ['<LeftMouse>'] = cmp.mapping.confirm({ select = true }),
 
-        -- ['<LeftMouse>'] = cmp.mapping(function(fallback)
-        --   local entry = cmp.get_selected_entry()
-        --   cmp.mapping.confirm({ select = true })
-        --   if entry then 
-        --     vim.inspect("Nete")
-        --        
-        --   else
-        --     vim.inspect("Nete")
-        --     vim.notify("Item yang diselect tidak ada")
-        --     fallback() -- Jalankan fallback jika tidak ada item yang dipilih
-        --   end
-        -- end, { "i"}),
-
-        
+      --   ['<LeftMouse>'] = cmp.mapping(function(fallback)
+      --     local entry = cmp.get_selected_entry()
+      --     cmp.mapping.confirm({ select = true }) 
+      --     if entry then 
+      --       vim.inspect("Nete")
+      --     
+      --     else
+      --       vim.inspect("Nete")
+      --     -- vim.notify("Item yang diselect tidak ada")
+      --       
+      --       fallback()
+      --        -- Jalankan fallback jika tidak ada item yang dipilih
+      --     end
+      --   end, { "i"}),
+      -- 
     })   
     -- ==========================================================
     return opts

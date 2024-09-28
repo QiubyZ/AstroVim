@@ -10,13 +10,15 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "lua_ls",
-        "jedi_language_server",
-        "gopls",
-        "yamlls",
-        "kotlin_language_server",
-        "bashls",
-        "gradle_ls",
+        "lemminx", --XML LSP
+        "lua_ls", --Lua LSP
+        "pyright", --Python LSP
+        "gopls", -- Golang LSP
+        "jdtls", --Java LSP
+        "yamlls", --YML LSP
+        "kotlin_language_server", --Kotlin LSP
+        "bashls", --Bash LSP
+        "gradle_ls", --Gradle LSP
         
         -- add more arguments for adding more language servers
       },
@@ -38,7 +40,7 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       ensure_installed = {
-        "python",
+        "debugpy",
         -- add more arguments for adding more debuggers
       },
     },

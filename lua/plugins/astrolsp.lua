@@ -39,12 +39,17 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+        "clangd",
+        "pyright",
+        "jdtls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      clangd = {
+        cmd = {"/data/data/com.termux/files/usr/bin/clangd"},
+        capabilities = {offsetEncoding = "utf-8" },
+        },
     },
     -- customize how language servers are attached
     handlers = {

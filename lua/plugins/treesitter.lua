@@ -6,9 +6,18 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = {"lua","vim","bash","c","html"},
+    ensure_installed = {"lua",
+            "vim",
+            "bash",
+            "c",
+            "html",
+            "python",
+             "kotlin",
+             "go",
+             "java",},
     auto_install = true,
     --highlight = true,
     indent = {enable = true},
+    -- disable = {"lua"},
   },
 }
