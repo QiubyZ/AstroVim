@@ -30,7 +30,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        -- "lua_ls",
+        
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -40,8 +40,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
         "clangd",
-        "pyright",
-        "jdtls",
+        "lua_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -50,6 +49,9 @@ return {
         cmd = {"/data/data/com.termux/files/usr/bin/clangd"},
         capabilities = {offsetEncoding = "utf-8" },
         },
+      lua_ls = {
+        cmd = {"/data/data/com.termux/files/usr/bin/lua-language-server", "--stdio"}
+      }
     },
     -- customize how language servers are attached
     handlers = {

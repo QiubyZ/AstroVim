@@ -10,7 +10,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "lemminx", --XML LSP
+        -- "lemminx", --XML LSP
         "lua_ls", --Lua LSP
         "pyright", --Python LSP
         "gopls", -- Golang LSP
@@ -30,7 +30,7 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       ensure_installed = {
-        "stylua",
+        --"stylua",
         -- add more arguments for adding more null-ls sources
       },
     },
