@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent =
 
 -- Close Text Editor or ALL POPUP 
 vim.keymap.set('n', 'qqq', ':close<CR>', { noremap = true, silent = false })
-
+vim.keymap.set('c', '<tab>', '<C-z>', { silent = false }) -- to fix cmp -- to fix cmp
 -- CodeCompanion 
 vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })

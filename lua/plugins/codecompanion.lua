@@ -9,16 +9,19 @@ return {
     {"stevearc/dressing.nvim", opts = {}}
   },
   config = function()
+    local api_key = function ()
+      return os.getenv("GEMINI_API_KEY")
+    end
     require("codecompanion").setup{
       adapters = {
         gemini = function()
           return require("codecompanion.adapters").extend("gemini", {
-            url = string.format("https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${api_key}", model, api_key),
-            env = {
-            api_key = "AIzaSyAXCG2G5y6bMTlMwVyU7yvmprW1t_EF0Yc",
-            model = "schema.model.default",
-            },
             
+            url = "https://generativelanguage.googleapis.com",
+            env = {
+            api_key = api_key(),
+            model = "schema.model.default",
+            },          
             handlers = {
             chat_output = function(self, data)
     data = data:sub(7)
