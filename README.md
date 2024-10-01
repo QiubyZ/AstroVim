@@ -50,6 +50,6 @@ ln -f -s "$(command -v lua-language-server)" /data/data/com.termux/files/home/.l
 
 ```
 but I've already handled this in Astrovim, so you just need to install the lua-language-server and cland Binary on pkg termux
-![Look This]("./lua/plugins/astrolsp.lua")
+![Look This]("https://github.com/QiubyZ/AstroVim/blob/05ce13563cca0c0d4312ccffd42eaab581fe063d/lua/plugins/astrolsp.lua#L41-L55")
 
 
