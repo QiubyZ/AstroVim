@@ -1,3 +1,5 @@
+
+
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -14,18 +16,23 @@ return {
     { "hrsh7th/nvim-cmp" },
     {'hrsh7th/vim-vsnip'},
   },
+  
   config = function()
+    
     local cmp = require("cmp")
+
+
     cmp.setup({
       snippet = {
     --         expand = function(args)
     --   vim.fn["vsnip#anonymous"](args.body)
     -- end,
-               
+        
         expand = function(args)
-          require("luasnip").lsp_expand(args.body)
+          require("luasnip").lsp_expand(args.body) 
           
         end,
+        
       },
       window = {
         documentation = cmp.config.window.bordered(),
@@ -42,6 +49,7 @@ return {
         ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ['<C-Space>'] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm({select = true}),
+        
      },
       sources = cmp.config.sources({
       {index= "1", name = "nvim_lsp", priority = 1000 },
@@ -82,8 +90,7 @@ return {
         ["<ScrollWheelUp>"]  = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
       }),
       sources = cmp.config.sources({
-        { name = "buffer" },
-}),
+        { name = "buffer" },}),
     })
     -- Configuate for Only cmdline
     --
