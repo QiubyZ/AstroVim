@@ -21,57 +21,32 @@ return {
     
     cmp.setup({
       snippet = {
-            expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-        
-
-        
-        -- expand = function(args)
-        --   require("luasnip").lsp_expand(args.body)
-        --   
-        -- end,
+    --         expand = function(args)
+    --   vim.fn["vsnip#anonymous"](args.body)
+    -- end,
+               
+        expand = function(args)
+          require("luasnip").lsp_expand(args.body)
+          
+        end,
       },
       window = {
         documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered(),
         
       }, 
-      mapping = {
-      
-      ['<PageUp>'] = cmp.mapping.scroll_docs(-4),
-      ['<PageDown>'] = cmp.mapping.scroll_docs(4),
-      ['<Esc>'] = cmp.mapping.abort(),
-      ['<ScrollWheelDown>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-      ["<ScrollWheelUp>"]  = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+      mapping = {      
+        ['<PageUp>'] = cmp.mapping.scroll_docs(-4),
+        ['<PageDown>'] = cmp.mapping.scroll_docs(4),
+        ['<Esc>'] = cmp.mapping.abort(),       
+        ['<ScrollWheelDown>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<ScrollWheelUp>"]  = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+        ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), 
+        ['<C-Space>'] = cmp.mapping.complete(),       
+        ["<CR>"] = cmp.mapping.confirm({select = true}),
 
-['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-      ["<Down>"]  = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-
-       
-        
-      ['<C-Space>'] = cmp.mapping.complete(),
-       
-       ["<CR>"] = cmp.mapping.confirm({select = true}),
-      
-
-        ['<LeftMouse>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-            local entry = cmp.get_selected_entry()
-            if entry then
-              vim.notify(entry:get_completion_item().label)
-              fallback()
-              
-            else
-
-              vim.notify("No selected")
-              fallback()
-            end
-      else
-          fallback()
-      end
-        end, { 'i', 's' }),
-         -- LuaSnip
+        -- LuaSnip
         ["<C-j>"] = cmp.mapping(function(fallback)
           if luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
@@ -99,11 +74,13 @@ return {
       }, 
       sources = cmp.config.sources({
       
-      { name = "nvim_lsp", priority = 1000 },
+      {index= "1", name = "nvim_lsp", priority = 1000 },
       { name = "lua", priority = 750 },
       { name = "buffer", priority = 500 },
         { name = 'nvim_lsp_signature_help' },
+        {name = "path"},
         { name = "emoji", priority = 700 },
+
       }),
       
       formatting = {
@@ -133,8 +110,7 @@ return {
           cmp.config.compare.order,
         },
       },
-    })
-
+    }) 
     -- For `/` and `?`
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline({
@@ -145,7 +121,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "buffer" },
-      }),
+}),
     })
 
     -- Configuate for Only cmdline
@@ -170,5 +146,4 @@ return {
       }),
     })
   end,
-  
 }
