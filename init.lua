@@ -32,15 +32,7 @@ vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = fa
 vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
--- Close Text Editor or ALL POPUP 
+-- Close Text Editor or  PopUp Window   
 vim.keymap.set('n', 'qqq', ':close<CR>', { noremap = true, silent = false })
-vim.keymap.set('c', '<tab>', '<C-z>', { silent = false }) -- to fix cmp -- to fix cmp
--- CodeCompanion 
-vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
 
--- Expand 'cc' into 'CodeCompanion' in the command line
-vim.cmd([[cab cc CodeCompanion]])
+

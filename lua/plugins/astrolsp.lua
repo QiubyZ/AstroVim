@@ -22,7 +22,7 @@ return {
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
+          
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -39,8 +39,8 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-        "clangd",
-        "lua_ls",
+        "clangd", -- Add Clandd
+        "lua_ls", -- Add lua_ls 
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -49,8 +49,16 @@ return {
         cmd = {"/data/data/com.termux/files/usr/bin/clangd"},
         capabilities = {offsetEncoding = "utf-8" },
         },
+
       lua_ls = {
-        cmd = {"/data/data/com.termux/files/usr/bin/lua-language-server", "--stdio"}
+        cmd = {"/data/data/com.termux/files/usr/bin/lua-language-server", "--stdio"},
+        settings = {
+          Lua = {
+            diagnostics = {
+              disable = {"trailing-space"},
+            }
+          }
+        }
       }
     },
     -- customize how language servers are attached
