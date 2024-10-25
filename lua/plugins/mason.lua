@@ -41,6 +41,10 @@ return {
     opts = {
       ensure_installed = {
         "debugpy",
+        "bash_debug_adapter",
+        "go_debug_adapter",
+        "kotlin_debug_adapter",
+        "java_debug_adapter",
         -- add more arguments for adding more debuggers
       },
     },
