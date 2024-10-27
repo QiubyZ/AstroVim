@@ -36,11 +36,12 @@ nvim
 #### Installation Termux-Api for Copy text (yank text)
 
 ```bash
-pkg install termux-api 
+pkg install termux-api luarocks
 
 ```
 
-#### Installing lua-language-server 
+#### Installing lua-language-server
+
 We have to install the Lua language server which is available in the Termux repository.
 then configure it into NVIM as a language server for lua-language-server
 
@@ -49,6 +50,6 @@ pkg in lua-language-server && \
 ln -f -s "$(command -v lua-language-server)" /data/data/com.termux/files/home/.local/share/nvim/mason/packages/lua-language-server/libexec/bin/lua-language-server
 
 ```
+
 but I've already handled this in Astrovim, so you just need to install the lua-language-server and cland Binary on pkg termux
 Look code [astrolsp.lua](./lua/plugins/astrolsp.lua#L41-L55) folder detail configuration.
-
