@@ -11,7 +11,7 @@ return {
     opts = {
       ensure_installed = {
         -- "lemminx", --XML LSP
-        "lua_ls", --Lua LSP
+        --"lua_ls", Lua LSP
         "pyright", --Python LSP
         "gopls", -- Golang LSP
         "jdtls", --Java LSP
