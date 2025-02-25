@@ -1,4 +1,5 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+--if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason plugins
 
@@ -10,7 +11,13 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "lua_ls",
+        -- "lua_ls",
+        "ts_ls",
+        "gopls",
+        "java_language_server",
+        "kotlin_language_server",
+        "jedi_language_server",
+        
         -- add more arguments for adding more language servers
       },
     },
